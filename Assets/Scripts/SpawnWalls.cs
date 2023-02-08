@@ -1,12 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnWalls : MonoBehaviour
 {
     private int numero;
     [SerializeField] private GameObject preMiniWall;
-    [SerializeField] private Transform[] posMiniWalls;
-    private bool[] posAlreadyUsed;
+    [SerializeField] private List<TransformDatas> posMiniWalls;
+    [SerializeField] private bool[] posAlreadyUsed;
+    [SerializeField] private AppDatas choice;
 
     private void OnEnable()
     {
@@ -20,7 +22,8 @@ public class SpawnWalls : MonoBehaviour
 
     private void Start()
     {
-        posAlreadyUsed = new bool[posMiniWalls.Length];
+        posAlreadyUsed = new bool[choice.actualDifficulty.posMiniWalls.Count];
+        posMiniWalls = choice.actualDifficulty.posMiniWalls;
     }
 
     private void SpawnWall()
@@ -30,11 +33,17 @@ public class SpawnWalls : MonoBehaviour
 
     private IEnumerator DelayBeforeSpawn()
     {
-        yield return new WaitForSeconds(2f);
-        numero = Random.Range(0, posMiniWalls.Length);
-        while (posAlreadyUsed[numero])
+        yield return new WaitForSeconds(1f);
+        numero = Random.Range(0, posMiniWalls.Count);
+        foreach (bool _bool in posAlreadyUsed)
         {
-            numero = Random.Range(0, posMiniWalls.Length);
+            if (_bool == false)
+            {
+                while (posAlreadyUsed[numero])
+                {
+                    numero = Random.Range(0, posMiniWalls.Count);
+                }
+            }
         }
         SpawnMiniWall(numero);
         posAlreadyUsed[numero] = true;
@@ -42,6 +51,6 @@ public class SpawnWalls : MonoBehaviour
     
     private void SpawnMiniWall(int i)
     {
-        Instantiate(preMiniWall, posMiniWalls[i].transform.position, posMiniWalls[i].transform.rotation);
+        Instantiate(preMiniWall, posMiniWalls[i].Position,Quaternion.Euler(posMiniWalls[i].Rotation));
     }
 }
