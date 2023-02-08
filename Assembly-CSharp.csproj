@@ -46,6 +46,7 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Level.cs" />
      <Compile Include="Assets\Scripts\SpawnTargets.cs" />
+     <Compile Include="Assets\Scripts\SpawnWalls.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Prefab" />
      <Folder Include="Assets\Material" />

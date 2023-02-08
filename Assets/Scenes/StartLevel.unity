@@ -1369,20 +1369,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 30
-  preMiniWall: {fileID: 4204340436842599928, guid: 934cab5fd3457ad4abaa99adee00dc3e, type: 3}
-  posMiniWalls:
-  - {fileID: 537059206}
-  - {fileID: 952624635}
-  - {fileID: 1057206581}
-  - {fileID: 534680034}
-  - {fileID: 1385777304}
-  - {fileID: 272818239}
-  - {fileID: 1376669281}
-  - {fileID: 1615178221}
-  - {fileID: 1795502979}
-  - {fileID: 513512102}
-  - {fileID: 1609409175}
-  - {fileID: 1630358739}
   targetScore: 0
   UpdateScore:
     m_PersistentCalls:
@@ -2399,8 +2385,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1625469230}
+  - component: {fileID: 1625469231}
   m_Layer: 0
-  m_Name: miniWall
+  m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2433,6 +2420,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1625469231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625469229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2618df1ad4e079e47afcb626f2a48c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preMiniWall: {fileID: 4204340436842599928, guid: 934cab5fd3457ad4abaa99adee00dc3e, type: 3}
+  posMiniWalls:
+  - {fileID: 537059206}
+  - {fileID: 952624635}
+  - {fileID: 1057206581}
+  - {fileID: 534680034}
+  - {fileID: 1385777304}
+  - {fileID: 272818239}
+  - {fileID: 1376669281}
+  - {fileID: 1615178221}
+  - {fileID: 1795502979}
+  - {fileID: 513512102}
+  - {fileID: 1609409175}
+  - {fileID: 1630358739}
 --- !u!1 &1630358738
 GameObject:
   m_ObjectHideFlags: 0
